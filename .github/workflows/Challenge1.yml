@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: print date
       run: date
-      
+
     - name: print working directory
       run: pwd
 
@@ -31,3 +31,6 @@ jobs:
 
     - name: create artefact
       run: echo "# This is my python artefact" > artifact.py
+    
+    - name: run the python file
+      run: python artifact.py
