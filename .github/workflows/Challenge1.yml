@@ -1,0 +1,30 @@
+name: Challenge1
+on:
+  push:
+    branches:
+      - dev
+
+jobs: 
+  job1:
+    name: job1
+    runs-on: ubuntu-latest
+    steps:
+    - name: print date
+      run: echo "date: $(date)"
+    - name: print working directory
+      run: echo "Working directory: $(pwd)"
+    - name: print contents
+      run: echo "Contents of the working directory $(ls -a)"
+  job2:
+    name: job2
+    runs-on: windows-latest
+    steps:
+    - name: setup python
+      uses: actions/setup-python@v6
+      with:
+        python-version: 3.13
+      run: python --version
+    - name: set up pandas
+      run: pip install pandas
+    - name: create artefact
+      run: echo "# This is my python artefact" > artifact.py
