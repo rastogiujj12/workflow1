@@ -6,8 +6,10 @@ jobs:
     name: job1
     runs-on: ubuntu-latest
     steps:
-    - name: step1
-      run: echo "Hello from job1 on date('Y-m-d')" 
+    - name: setup python
+      uses: actions/setup-python@v6
+      with:
+        python-version: 3.12
   job2:
     name: job2
     runs-on: windows-latest
