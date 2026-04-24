@@ -33,4 +33,4 @@ jobs:
       run: echo "# This is my python artefact" > artifact.py
     
     - name: run the python file
-      run: python artifact.py
+      run: python3 artifact.py
